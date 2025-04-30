@@ -1,10 +1,12 @@
 # README
+
 ## Table Of Contents
--   [Video](#video)
--   [Run in Intellij IDEA (recommend)](#run-in-intellij-idea)
--   [Run in Spring Tool Suite](#run-in-spring-tool-suite)
+
+- [Run in Intellij IDEA (recommend)](#run-in-intellij-idea)
+- [Run in Spring Tool Suite](#run-in-spring-tool-suite)
 
 ## Repo tree
+
 ```bash
 com/zbq/                 # Implementation of global cache and message queue
 ├── ACTFEvent.java
@@ -66,7 +68,7 @@ supplychain/activiti     # Closely related to the activiti engine our bussiness 
 │   ├── SendMsgToWVCService.java
 │   ├── UpdateVesselInfoService.java
 │   └── UpdateWeagonInfoService.java
-└── servlet         # About other web configuration 
+└── servlet         # About other web configuration
     ├── MyApiDispatcherServletConfiguration.java   #servlet dispatcher for url pattern /api/*
     ├── MyCorsFilter.java        # used to solve CORS problem.
     ├── MyWebConfigurer.java     # configure two servlet dispatcher , respectively for '/api/*' and '/app/*'.
@@ -92,89 +94,94 @@ supplychain/entity/     # Some custom Types for process model.
 └── WPort.java
 ```
 
-## Video
-[Demo video](https://www.dropbox.com/s/kvhavse90hicdi9/cases_demo.mp4?dl=0)
-
 ## Run in `Intellij IDEA`
+
+IMPORTANT NOTE: THIS MIGHT NEED IntelliJ IDEA Ultimate SOFTWARE EDITION TO RUN THE PROJECT.
+
 1.  Download development tool:
 
     IDE: [Intellij IDEA](https://www.jetbrains.com/idea/download)
-    
+
     Web Container: [Tomcat](http://tomcat.apache.org/)
-    
+
     Database: [MYSQL](https://www.mysql.com/)
 
 2.  Clone Source Code:
 
-    `git clone --recursive git@github.com:sonnyhcl/Backend.git`
+    `git clone --recursive git@github.com:ishanvi25/ishanvi25.git`
 
-3.  Import Project in IDEA:  
+3.  Import Project in IDEA:
 
-    -   Choose `Import Project`.
-        ![import](image/idea_import_project.png)
+    - Choose `Import Project`.
+      ![import](image/idea_import_project.png)
 
-    -   Choose the `directory path` which you clone the source code
-    -   Choose import project from external model `maven`
-    -   Pass `select profiles`
-    -   Pass `select maven projects to import`.
-    -   Carefully choose `project JDK`
-    -   `Finish`
-    -   Wait for IDEA to download maven dependencies
+    - Choose the `directory path` which you clone the source code
+    - Choose import project from external model `maven`
+    - Pass `select profiles`
+    - Pass `select maven projects to import`.
+    - Carefully choose `project JDK`
+    - `Finish`
+    - Wait for IDEA to download maven dependencies
 
 4.  Configure Mysql
 
     First make sure you have installed `mysql` and your mysql has a empty database called `act6`
-    
-    Or you can edit your own mysql `databasename/username/password` in [activiti-app.properties](https://github.com/sonnyhcl/Backend/blob/master/src/main/resources/META-INF/activiti-app/activiti-app.properties)
+
+    Or you can edit your own mysql `databasename/username/password` in [activiti-app.properties](https://github.com/ishanvi25/ishanvi25/blob/master/src/main/resources/META-INF/activiti-app/activiti-app.properties)
 
 5.  Configure Tomcat:
-    -   Click `Run`
-        ![run_idea](image/run_idea.png)
-    -   Edit `Run Configuration`
-    -   Click the `plus` in left-up corner
-    -   Choose `Tomcat Server`
-    -   Choose `local`
-    -   Configure tomcat in idea
-        ![tomcat_idea](image/tomcat_idea.png)
 
-    -   Configure artifact
-        ![artifact](image/artifact.png)
+    - Click `Run`
+      ![run_idea](image/run_idea.png)
+    - Edit `Run Configuration`
+    - Click the `plus` in left-up corner
+    - Choose `Tomcat Server`(ONLY AVAILABLE IN IntelliJ IDEA Ultimate EDITION)
+    - Choose `local`
+    - Configure tomcat in idea
+      ![tomcat_idea](image/tomcat_idea.png)
 
-    -   Configure application-context: `/activiti-app`
-        ![application-context](image/application-context.png)
+    - Configure artifact
+      ![artifact](image/artifact.png)
 
-7.  Run Activiti
+    - Configure application-context: `/activiti-app`
+      ![application-context](image/application-context.png)
+
+6.  Run Activiti
 
     Run Activiti and visit [https://localhost:8080/activiti-app](https://localhost:8080/activiti-app) in the browser
+
     ```
     username: admin
     password: test
     ```
+
     ![activiti](image/activiti.png)
 
-8.  Import bpmn:
+7.  Import bpmn:
 
-    After running the project and logging in  the system , upload process models under the root directory `src/main/resources`, such as `Supply_Chain_pool.bpmn`, `Weagon_Test.bpmn`, then create app for it  and publish your app, then  go to processes page to start the selected process.
+    After running the project and logging in the system , upload process models under the root directory `src/main/resources`, such as `Supply_Chain_pool.bpmn`, `Weagon_Test.bpmn`, then create app for it and publish your app, then go to processes page to start the selected process.
     ![import process](image/import_process.png)
 
 ## Run in `Spring Tool Suite`
+
 1.  Download development tool:
 
     IDE: [Spring-Tool-Suite-3.9.0.RELEASE](https://spring.io/tools/sts/all)
-    
+
     Web Container: [Tomcat](http://tomcat.apache.org/)
-    
+
     Database: [Mysql](https://www.mysql.com/)
 
 2.  Clone Source Code:
 
-    `git clone --recursive git@github.com:sonnyhcl/Backend.git`
+    `git clone --recursive git@github.com:ishanvi25/ishanvi25.git`
 
-3.  Import Project:  
+3.  Import Project:
 
     To import Backend as a Maven project in IDEA, follow the steps below :
     `File -> Import -> Maven -> Existing Maven Projects -> Select Root Directory -> Finish`
     ![import](image/idea_import_project)
+
 4.  Update Maven Dependencies:
 
     Right click the project name `activiti-app`, then enter -> `Maven` -> `Update Project`, waiting to load dependencies.
@@ -195,17 +202,20 @@ supplychain/entity/     # Some custom Types for process model.
 7.  Run Activiti
 
     Visit [https://localhost:8080/activiti-app](https://localhost:8080/activiti-app) in the browser, enter the login page,
+
     ```
     username: admin
     password: test
     ```
+
     ![activiti](image/activiti.png)
 
 8.  Develop:
 
-    After running the project and logging in  the system , upload process models under the root directory `src/main/resources`, such as [Supply_Chain_pool.bpmn20.xml](https://github.com/sonnyhcl/Backend/blob/master/src/main/resources/Supply_Chain_pool.bpmn20.xml), then create app for it  and publish your app, then  go to processes page to start the selected process.
+    After running the project and logging in the system , upload process models under the root directory `src/main/resources`, then create app for it and publish your app, then go to processes page to start the selected process.
     ![import process](image/import_process.png)
 
 ## Dependencies
--   [`Vessel Frontend`](https://www.github.com/sonnyhcl/Frontend)
-    > Attention: In order to perform as [demo](#demo) shows, The `Activiti Backend` project must be coordinated with the `Vessel Frontend` project.
+
+- [`Vessel Frontend`](https://github.com/ishanvi25/ishanvi25.git)
+  > Attention: In order to perform as [demo](#demo) shows, The `Activiti Backend` project must be coordinated with the `Vessel Frontend` project.
