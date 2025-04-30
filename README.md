@@ -197,7 +197,7 @@ IMPORTANT NOTE: THIS MIGHT NEED IntelliJ IDEA Ultimate SOFTWARE EDITION TO RUN T
 
 6.  Configure Mysql
 
-    First make sure you have installed mysql. You can edit your own mysql `databasename/username/password` in [activiti-app.properties](https://github.com/sonnyhcl/Backend/blob/master/src/main/resources/META-INF/activiti-app/activiti-app.properties)
+    First make sure you have installed mysql. You can edit your own mysql `databasename/username/password` in [activiti-app.properties]([https://github.com/sonnyhcl/Backend](https://github.com/ishanvi25/ishanvi25/blob/master/src/main/resources/META-INF/activiti-app/activiti-app.properties)
 
 7.  Run Activiti
 
